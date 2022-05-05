@@ -1,0 +1,119 @@
+<html>
+<head>
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date();
+var day=today.getUTCDate();
+var hour=today.getUTCHours();
+var min=today.getUTCMinutes();
+var sec=today.getUTCSeconds();
+// need beginning reference point: May 5th at 00:00 CST
+// UTC time is 5 hrs ahead so scav begin at May 5th 05:00 UTC
+var begin_day=5;
+var begin_hour=5;
+var begin_min=0;
+var begin_sec=0;
+//calculate differences from starting references
+var d_day = day - begin_day;
+var d_hour = hour - begin_hour;
+var d_min = min - begin_min;
+//every 15 minutes there is a new day
+var minutes_since_start = d_min + 60*d_hour + 24*60*d_day;
+var scav_days = minutes_since_start / 15.0;
+var scav_month = 0;
+while (scav_days>ndays(scav_month))
+{
+scav_month += 1;
+scav_days -= ndays(scav_month);
+}
+scav_days = parseInt(scav_days);
+// add a zero in front of numbers<10
+min=checkTime(min);
+sec=checkTime(sec);
+document.getElementById('txt').innerHTML="Right now it's May "+day+", "+hour+":"+min+":"+sec+" UTC. It's been "+minutes_since_start+" mins ("+parseInt(minutes_since_start/15)+" scav days) since list release, making it "+monthname(scav_month)+" "+scav_days+", 2014.";
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+{
+i="0" + i;
+}
+return i;
+}
+
+function ndays(month)
+{
+switch(month){
+case 0:
+	return 31;
+case 1:
+	return 28;
+case 2:
+	return 31;
+case 3:
+	return 30;
+case 4:
+	return 31;
+case 5:
+	return 30;
+case 6:
+	return 31;
+case 7:
+	return 31;
+case 8:
+	return 30;
+case 9:
+	return 31;
+case 10:
+	return 31;
+case 11:
+	return 31;
+default:
+	return 0;
+}
+}
+
+function monthname(month)
+{
+switch(month){
+case 0:
+	return "January";
+case 1:
+	return "February";
+case 2:
+	return "March";
+case 3:
+	return "April";
+case 4:
+	return "May";
+case 5:
+	return "June";
+case 6:
+	return "July";
+case 7:
+	return "August";
+case 8:
+	return "September";
+case 9:
+	return "October";
+case 10:
+	return "November";
+case 11:
+	return "December";
+default:
+	return "????";
+}
+}
+</script>
+</head>
+<center>Center this text!</center>
+<center>Center this text!</center>
+<center>Center this text!</center>
+<center>Center this text!</center>
+<body onload="startTime()">
+<div id="txt"></div>
+</body>
+</html>
