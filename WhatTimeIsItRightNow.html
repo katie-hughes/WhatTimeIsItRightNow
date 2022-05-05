@@ -20,18 +20,20 @@ var d_hour = hour - begin_hour;
 var d_min = min - begin_min;
 //every 15 minutes there is a new day
 var minutes_since_start = d_min + 60*d_hour + 24*60*d_day;
-var scav_days = minutes_since_start / 15.0;
+var scav_days = parseInt(minutes_since_start / 15.0);
 var scav_month = 0;
 while (scav_days>ndays(scav_month))
 {
-scav_month += 1;
 scav_days -= ndays(scav_month);
+scav_month += 1;
 }
-scav_days = parseInt(scav_days);
+//scav_days = parseInt(scav_days);
 // add a zero in front of numbers<10
 min=checkTime(min);
 sec=checkTime(sec);
-document.getElementById('txt').innerHTML="Right now it's May "+day+", "+hour+":"+min+":"+sec+" UTC. It's been "+minutes_since_start+" mins ("+parseInt(minutes_since_start/15)+" scav days) since list release, making it "+monthname(scav_month)+" "+scav_days+", 2014.";
+document.getElementById('txt').innerHTML="Right now it's May "+day+", "+hour+":"+min+":"+sec+" UTC.";
+document.getElementById('txt2').innerHTML="It's been "+minutes_since_start+" mins ("+parseInt(minutes_since_start/15)+" scav days) since list release.";
+document.getElementById('txt3').innerHTML="In Scav Time, it's "+monthname(scav_month)+" "+scav_days+", 2014!";
 t=setTimeout('startTime()',500);
 }
 
@@ -107,13 +109,148 @@ default:
 	return "????";
 }
 }
+
+function say_something(month)
+{
+switch(month){
+case 0:
+	return "Brrr";
+case 1:
+	return "The month of love <3";
+case 2:
+	return "The end of this long winter is in sight!";
+case 3:
+	return "Enjoy those showers!";
+case 4:
+	return "IT'S SCAV SEASON BABEY!!!1!";
+case 5:
+	return "What time is it? Summertime!";
+case 6:
+	return "July";
+case 7:
+	return "August";
+case 8:
+	return "September";
+case 9:
+	return "October";
+case 10:
+	return "November";
+case 11:
+	return "December";
+default:
+	return "????";
+}
+}
+
 </script>
 </head>
-<center>Center this text!</center>
-<center>Center this text!</center>
-<center>Center this text!</center>
-<center>Center this text!</center>
+<style>
+h1 {text-align: center;}
+p {text-align: center; font-size: 2}
+pre {text-align: center; font-size: 10; margin-bottom: 0; margin : 0; padding-top:0;}
+div {text-align: center;}
+</style>
+
+<pre></pre>
+<pre>░██╗░░░░░░░██╗██╗░░██╗░█████╗░████████╗  ████████╗██╗███╗░░░███╗███████╗  ██╗░██████╗  ██╗████████╗</pre>
+<pre>░██║░░██╗░░██║██║░░██║██╔══██╗╚══██╔══╝  ╚══██╔══╝██║████╗░████║██╔════╝  ██║██╔════╝  ██║╚══██╔══╝</pre>
+<pre>░╚██╗████╗██╔╝███████║███████║░░░██║░░░  ░░░██║░░░██║██╔████╔██║█████╗░░  ██║╚█████╗░  ██║░░░██║░░░</pre>
+<pre>░░████╔═████║░██╔══██║██╔══██║░░░██║░░░  ░░░██║░░░██║██║╚██╔╝██║██╔══╝░░  ██║░╚═══██╗  ██║░░░██║░░░</pre>
+<pre>░░╚██╔╝░╚██╔╝░██║░░██║██║░░██║░░░██║░░░  ░░░██║░░░██║██║░╚═╝░██║███████╗  ██║██████╔╝  ██║░░░██║░░░</pre>
+<pre>░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░  ░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ╚═╝╚═════╝░  ╚═╝░░░╚═╝░░░</pre>
+
+<pre></pre>
+<pre>██████╗░██╗░██████╗░██╗░░██╗████████╗  ███╗░░██╗░█████╗░░██╗░░░░░░░██╗░█████╗░</pre>
+<pre>██╔══██╗██║██╔════╝░██║░░██║╚══██╔══╝  ████╗░██║██╔══██╗░██║░░██╗░░██║██╔══██╗</pre>
+<pre>██████╔╝██║██║░░██╗░███████║░░░██║░░░  ██╔██╗██║██║░░██║░╚██╗████╗██╔╝╚═╝███╔╝</pre>
+<pre>██╔══██╗██║██║░░╚██╗██╔══██║░░░██║░░░  ██║╚████║██║░░██║░░████╔═████║░░░░╚══╝░</pre>
+<pre>██║░░██║██║╚██████╔╝██║░░██║░░░██║░░░  ██║░╚███║╚█████╔╝░░╚██╔╝░╚██╔╝░░░░██╗░░</pre>
+<pre>╚═╝░░╚═╝╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░  ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░░░░╚═╝░░</pre>
+
+
+
+<pre></pre>
+<pre>▒█▀▀▀█ █▀▀█ █▀▀█ █▀▀▄ █▀▀ █▀▀█ █▀▀█ █▀▀ █▀▀▄ 　 ▒█▀▀█ █░░█ ▄</pre>
+<pre>░▀▀▀▄▄ █░░█ █░░█ █░░█ ▀▀█ █░░█ █▄▄▀ █▀▀ █░░█ 　 ▒█▀▀▄ █▄▄█ ░</pre>
+<pre>▒█▄▄▄█ █▀▀▀ ▀▀▀▀ ▀░░▀ ▀▀▀ ▀▀▀▀ ▀░▀▀ ▀▀▀ ▀▀▀░ 　 ▒█▄▄█ ▄▄▄█ ▀</pre>
+
+<pre></pre>
+<pre>██████╗░██████╗░███████╗░█████╗░██╗░░██╗░██████╗░█████╗░░█████╗░██╗░░░██╗  ██████╗░░█████╗░██████╗░██████╗░</pre>
+<pre>██╔══██╗██╔══██╗██╔════╝██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔══██╗██║░░░██║  ╚════██╗██╔══██╗╚════██╗╚════██╗</pre>
+<pre>██████╦╝██████╔╝█████╗░░██║░░╚═╝█████═╝░╚█████╗░██║░░╚═╝███████║╚██╗░██╔╝  ░░███╔═╝██║░░██║░░███╔═╝░░███╔═╝</pre>
+<pre>██╔══██╗██╔══██╗██╔══╝░░██║░░██╗██╔═██╗░░╚═══██╗██║░░██╗██╔══██║░╚████╔╝░  ██╔══╝░░██║░░██║██╔══╝░░██╔══╝░░</pre>
+<pre>██████╦╝██║░░██║███████╗╚█████╔╝██║░╚██╗██████╔╝╚█████╔╝██║░░██║░░╚██╔╝░░  ███████╗╚█████╔╝███████╗███████╗</pre>
+<pre>╚═════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░  ╚══════╝░╚════╝░╚══════╝╚══════╝</pre>
+
+
+
+
+
 <body onload="startTime()">
-<div id="txt"></div>
+<div id="txt" style="text-align: center;"></div>
+<div id="txt2" style="text-align: center;"></div>
+<div id="txt3" style="text-align: center;"></div>
+
+<pre>##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##</pre>
+<pre>#@o.................................................................................... ...°°°°°°....................................o@#</pre>
+<pre>#@o                                                                                    *OOOOOOoo*°.                                  o@#</pre>
+<pre>#@o                                                                                 °o##o.                                           o@#</pre>
+<pre>#@o                                                                        .°**ooOO#@@@OOOOOOOOOOOOOOo°.                             o@#</pre>
+<pre>#@o                                                                    .oO#@@#OOo*°°................°*oOOo*.                         o@#</pre>
+<pre>#@o                                                          °       °o#@@O°                             .**                         o@#</pre>
+<pre>#@o                                                         O@     *O@@@O°                    ...°°°**ooOOOOOo*.                     o@#</pre>
+<pre>#@o                                                       .#@#.  *#@@###.          .°°**ooOOO###Ooo******ooO##OOOO*°.                o@#</pre>
+<pre>#@o                                                      .#@## .O@@######°  .°*oO##@@@@@@@@@@o*°.           .@*  .°****°°            o@#</pre>
+<pre>#@o                                                       .o@@##@#######@###@@@@@@@@@##Oooooooooooooooo*.  °**.                      o@#</pre>
+<pre>#@o                                                         .#@##########@@@####@#O*.                 °O°                            o@#</pre>
+<pre>#@o                                                        .o###################o.    .°°***ooo****°°..                              o@#</pre>
+<pre>#@o                                                     .*O@@@##################OOO###@@@@@@@@@@@@@@@@@@@##OOOoo*°°.                 o@#</pre>
+<pre>#@o                                                   .o#@@#####################@@@@@@#######@O*°°......°°°°°***oooO##o.             o@#</pre>
+<pre>#@o                                                  °#@#############@@##########@@###@@@######o°.                   o@@#°           o@#</pre>
+<pre>#@o                                                 °@@####@@@@@@@@@@##@@########OooO@#oooOOo°..°°°°**°°°..            °o#o          o@#</pre>
+<pre>#@o                                                *######@#o**oooo***°°#########.*#@#.  .*#@@O°       ..°°****°.         *o*.       o@#</pre>
+<pre>#@o                                             .*#@######o°*OOoooOO###O##########Ooo.      °O@@#.            .O@.          *OO.     o@#</pre>
+<pre>#@o                                           °o#@@#######o#@*°..°*O@#@@@#####@@@@@@##o       .o##°**.          °O°           °°     o@#</pre>
+<pre>#@o                                          O@@##########@#        ###########*°..O@#°          O@°°O°          .O#*°°              o@#</pre>
+<pre>#@o                                         o@@###########@@o°....°o#########@°   °o°             #*  °°           *@#oo*.           o@#</pre>
+<pre>#@o                                        *@@O##########@O**oO#@@@@###########Oo*°               .o.   .           Oo  .**          o@#</pre>
+<pre>#@o                                      .O@@o°#########@*     .*O#@@@@@@@@@@#@#.                   °               °o    .*         o@#</pre>
+<pre>#@o                                     *#@@o°#@#######@O         .°*oO######@o                                      o.    .         o@#</pre>
+<pre>#@o                                    O@@#*°#@########@°                   oO                                        .              o@#</pre>
+<pre>#@o                                   O@@O°o@@#########@°                   #.                                                       o@#</pre>
+<pre>#@o                                  #@O**#@############O                  *O                                                        o@#</pre>
+<pre>#@o                                 °O**O@@#############@O.                Oo                                                        o@#</pre>
+<pre>#@o                                 °o#@@################@@O*°             *#.                                                       o@#</pre>
+<pre>#@o                              °o#@@@####################@@@#OOo**°°°°*oO####.                                                     o@#</pre>
+<pre>#@o                           .o#@@@@@########################@@@@@@@@@@@@@@@#o.                                                     o@#</pre>
+<pre>#@o                        .*O@@@@@#o*@#####################################o.                                                       o@#</pre>
+<pre>#@o                      °o#@@#@#O*   o@@@@@@@@@##########@@@@@@@@@########@*                                                        o@#</pre>
+<pre>#@o                    °O@@####O°.     ooOOOO####@@@@@@@@@##OOOOO###@@@@@@###.                                                       o@#</pre>
+<pre>#@o                  .o@@@#@@@@##@#####OOoooo******ooO#Oo***oOooo**oooOO##@@@#O°                                                     o@#</pre>
+<pre>#@o                  O#############@@@@@@@@@@@@@###OOo**o##@#oooooo****°.°o°O#@@#O*.                                                 o@#</pre>
+<pre>#@o                               .......°*ooO#@@@@@@@@@@@@@O.°oO##OOOOOO##.  °o#@@@o.                                               o@#</pre>
+<pre>#@o                                        OOo**oO@@#o**oOO###OooooooooO@@@#*    .*#@@o.                                             o@#</pre>
+<pre>#@o                                        O@@@#o**o#Oo°.°*****ooOOO##O*°o#@@o      °O@@#o°                                          o@#</pre>
+<pre>#@o                                        o###@@*Oo**O#OOoooOOOOoo***oO#*°*O@O       .°*o##o°                                       o@#</pre>
+<pre>#@o                                        *@####*o@@#°°ooo*°°.*@@@@@#O*°o#o°°O*          .#@@#o°...°°°°°°.                          o@#</pre>
+<pre>#@o                                        °@###@O°##@O*@############@@@#*°o#O°.           ###o@@@@@o°.°*oOOO*.                      o@#</pre>
+<pre>#@o                                        *######°#@##°#@@@@@@@########@@#*°oOOo.         °#O  °O##O*.    .°o#O°                    o@#</pre>
+<pre>#@o                                        O@@@##@*O@#@*o@################@@#O**oOO°        °##*   .*#@#o°.    °oo*.                 o@#</pre>
+<pre>#@o                                       *@OoO##@*o@#@o*@###@@#############@@@#O*.**         o@@o.   .o@@#o.     .**°               o@#</pre>
+<pre>#@o                                      *Ooo#####o###@O*####*#@###############o@@              *O#*    .O@@#*                       o@#</pre>
+<pre>#@o                                    °O*O#@@@###@@##@o*@@@@O*################o*#o                       *#@@#°                     o@#</pre>
+<pre>#@o                               .°*O#@o*@############ooOOO#@O*@###########@##@O°#*                        *O@@#*                   o@#</pre>
+<pre>#@o                       .°*ooOOOOOOOOOo##############@@##O##O*@############@##@o*@°                         .*O@#o.                o@#</pre>
+<pre>#@o               .°*ooO#@@#OOOOOOO####@@@###############@@@#@oo@##########@**@##@°##.                           .*O##*.             o@#</pre>
+<pre>#@o            °oO##@@@##OooO##@@@@@@@#######################@O°@@##########O°#@@O*###.                              °o*             o@#</pre>
+<pre>#@o      ..°°*oOOOOOOOOOOO#@@@#################################O*O@@########@O*#@°O@@@#o°.                                           o@#</pre>
+<pre>#@o    .O#@@@@@##@@@@@@@@@@@@@@@@@@@@@@@@############@@@@@@####@#oo#@@@@@@###@O*#o*O##@@@##Oo*°..       °*o°                         o@#</pre>
+<pre>#@o   *@@@#Oo°.  ..°°°°°°°°******°°°°°*o#@@###########OOOO#@@@##@@Ooo#####@@@@@##@#OO#####@@@@@@####OO##@@@@o°.                      o@#</pre>
+<pre>#@o  o@Oo°.                              °O@@@@@@@@@@#.   .*O#@@@@@@O*.   .*o##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##Ooo*°°..            o@#</pre>
+<pre>#@o  .                                     °ooOOOOOooo°       ..°o#@@@#O*.    .°*ooOO######OOOoo**°°°....°°*oo##@@@@@@@@@####OOoo*   o@#</pre>
+<pre>#@o                                                                °oO#@@@#°                                    .*oOO#######OOo*°.   o@#</pre>
+<pre>#@o                                                                    ..                                                            o@#</pre>
+<pre>###OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO###</pre>
+
 </body>
 </html>
